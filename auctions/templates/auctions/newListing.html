@@ -1,0 +1,27 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2>New Listings</h2>
+    <form action="{% url 'newListing' %}" method="POST"> 
+        
+        <div class="col-sm-3 col-form-label-lg">
+            {{ form.as_p }}
+            {% csrf_token %}
+            <label for="formFile" class="form-label">Upload Picture</label>
+            <input type="file" id="formFile">
+            <label for="formFile" class="form-label">Upload Picture</label>
+            <input type="file" id="formFile">
+            <label for="formFile" class="form-label">Upload Picture</label>
+            <input type="file" id="formFile">
+            <label for="formFile" class="form-label">Upload Picture</label>
+            <input type="file" id="formFile">
+            <label for="formFile" class="form-label">-------------------------</label>
+            {% if success %}
+                <label for="formFile" class="form-label">Have problem some where! Just check and make sure you fill all</label>
+            {% else %}
+                <label for="formFile" class="form-label"></label>
+            {% endif %}
+            <input type="submit" id="formFile">
+        </div>
+    </form>
+{% endblock %}
